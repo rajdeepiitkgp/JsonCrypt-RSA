@@ -15,8 +15,8 @@ test('Mix Strings Numbers', () => {
   const encryptedObject = objCrypter.EncryptJson(inputObj);
   const outputObject = objDecrypter.DecryptJson(encryptedObject);
   // Need to Convert to String to Compare
-  Object.keys(inputObj).forEach((key) => expect(inputObj[key] + '').toBe(outputObject[key]));
-  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key] + ''));
+  Object.keys(inputObj).forEach((key) => expect(inputObj[key]).toBe(outputObject[key]));
+  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key]));
 });
 
 test('Mix Strings Numbers Boolean', () => {
@@ -25,8 +25,8 @@ test('Mix Strings Numbers Boolean', () => {
   const encryptedObject = objCrypter.EncryptJson(inputObj);
   const outputObject = objDecrypter.DecryptJson(encryptedObject);
   // Need to Convert to String to Compare
-  Object.keys(inputObj).forEach((key) => expect(inputObj[key] + '').toBe(outputObject[key]));
-  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key] + ''));
+  Object.keys(inputObj).forEach((key) => expect(inputObj[key]).toBe(outputObject[key]));
+  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key]));
 });
 
 test('Mix Strings Numbers Boolean Null', () => {
@@ -35,8 +35,8 @@ test('Mix Strings Numbers Boolean Null', () => {
   const encryptedObject = objCrypter.EncryptJson(inputObj);
   const outputObject = objDecrypter.DecryptJson(encryptedObject);
   // Need to Convert to String to Compare
-  Object.keys(inputObj).forEach((key) => expect(inputObj[key] + '').toBe(outputObject[key]));
-  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key] + ''));
+  Object.keys(inputObj).forEach((key) => expect(inputObj[key]).toBe(outputObject[key]));
+  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key]));
 });
 
 test('Mix Strings Numbers Boolean Null', () => {
@@ -45,8 +45,8 @@ test('Mix Strings Numbers Boolean Null', () => {
   const encryptedObject = objCrypter.EncryptJson(inputObj);
   const outputObject = objDecrypter.DecryptJson(encryptedObject);
   // Need to Convert to String to Compare
-  Object.keys(inputObj).forEach((key) => expect(inputObj[key] + '').toBe(outputObject[key]));
-  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key] + ''));
+  Object.keys(inputObj).forEach((key) => expect(inputObj[key]).toBe(outputObject[key]));
+  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key]));
 });
 
 test('Insert Via Veriables', () => {
@@ -60,6 +60,6 @@ test('Insert Via Veriables', () => {
   const encryptedObject = objCrypter.EncryptJson(inputObj);
   const outputObject = objDecrypter.DecryptJson(encryptedObject);
   // Need to Convert to String to Compare
-  Object.keys(inputObj).forEach((key) => expect(inputObj[key] + '').toBe(outputObject[key]));
-  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key] + ''));
+  Object.keys(inputObj).forEach((key) => expect(inputObj[key]).toBe(outputObject[key]));
+  Object.keys(outputObject).forEach((key) => expect(outputObject[key]).toBe(inputObj[key]));
 });
