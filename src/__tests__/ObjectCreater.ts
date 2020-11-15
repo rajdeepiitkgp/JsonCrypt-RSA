@@ -1,5 +1,6 @@
 import NodeRsa from 'node-rsa';
 import { JsonCrypt } from '../index';
+import fs from 'fs';
 
 const CreateCryptObject = (key: NodeRsa) => {
   const publicKey = key.exportKey('public');
@@ -22,4 +23,7 @@ export const CreateCryptDecryptObject = () => {
 
   return { objCrypter, objDecrypter };
 };
+
+export const GetFileJson = () => fs.readFileSync('./src/__tests__/bigjson.json', 'utf-8');
+
 test('Sample Test', () => expect(1).toBe(1));
