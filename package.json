@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rajdeepiitkgp/JsonCrypt.git"
+    "url": "git+https://github.com/rajdeepiitkgp/JsonCrypt-RSA.git"
   },
   "author": "Rajdeep Biswas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rajdeepiitkgp/JsonCrypt/issues"
+    "url": "https://github.com/rajdeepiitkgp/JsonCrypt-RSA/issues"
   },
-  "homepage": "https://github.com/rajdeepiitkgp/JsonCrypt#readme",
+  "homepage": "https://github.com/rajdeepiitkgp/JsonCrypt-RSA#readme",
   "devDependencies": {
     "@types/jest": "^26.0.15",
     "@types/node-rsa": "^1.0.0",
