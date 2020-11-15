@@ -21,23 +21,23 @@ export class JsonCrypt {
     if (!this.RsaPublicKey) throw new Error("RsaPublicKey Can't Be Null");
     const EncryptedObject: object = {};
     const value = JSON.stringify(JsonObject);
+    const FinalJsonObject = { value };
     // Before Encrypt The ObjStructure will be { value : JSONStringifiedString }
-    Object.keys({ value }).forEach(
-      (key) => (EncryptedObject[this.EncryptValue(key)] = this.EncryptValue(JsonObject[key])),
+    Object.keys(FinalJsonObject).forEach(
+      (key) => (EncryptedObject[this.EncryptValue(key)] = this.EncryptValue(FinalJsonObject[key])),
     );
     // After Encrypt The ObjStructure will be { ENC ('value') : ENC ('JSONStringifiedString') }
     return EncryptedObject;
   };
 
-  public DecryptJson = (JsonObject: object) => {
+  public DecryptJson = <T>(JsonObject: object) => {
     if (!this.RsaPrivateKey) throw new Error("RsaPrivateKey Can't Be Null");
-    const DecryptedObject: object = {};
+    const DecryptedObject: { value: string } = { value: null };
     // Before Decrypt The ObjStructure will be { ENC ('value') : ENC ('JSONStringifiedString') }
     Object.keys(JsonObject).forEach(
       (key) => (DecryptedObject[this.DecryptValue(key)] = this.DecryptValue(JsonObject[key])),
     );
     // After Decrypt The ObjStructure will be { value : JSONStringifiedString }
-    const field = 'value';
-    return JSON.parse(DecryptedObject[field]) as object;
+    return JSON.parse(DecryptedObject.value) as T;
   };
 }
