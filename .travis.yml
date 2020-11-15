@@ -1,7 +1,4 @@
-sudo: false
 language: node_js
-node-js:
- - 12
 script:
  - npm run lint
  - npm test
