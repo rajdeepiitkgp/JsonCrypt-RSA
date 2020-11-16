@@ -9,3 +9,6 @@ notifications:
 deploy:
   provider: npm
   edge: true
+  on:
+    all_branches: true
+    skip_cleanup: true
