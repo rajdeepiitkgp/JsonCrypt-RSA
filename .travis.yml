@@ -6,11 +6,3 @@ script:
 - npm test
 notifications:
   email: false
-deploy:
-  - npm run build 
-  provider: npm
-  api_token:
-    secure: Ew6PrI6Mj89Sp+P3GDIZktEl2MO10vNabFuaJaobrsAVJsoDKSpmcS1mY6/Z/6KCZ/jPTaQZj6lqMkhEcUSXrLH/7McYDHHx1CGlw9C78OJREh2rLqg8/iUNCnH2FL6mdd0FxV5uc56+vGXsA+RpRJIaGWbsnpNjpB2itHEKLhwl+RE3aCiwu1U7rAkyHhKc+EHULugOWHvGyXBxWkUpBsHmZTZ8zf71UE3QpSwqA3HGRIG4/gBv/SqAw692W4aOFqZTwE5rRVjMSILb1FXIPcBDqOdDIvnsg3NXZYKy3ChLBwhPFuMl3dOjvth/C817N+JF8napwIhwZRzUxvMJ+ayDmxEjZl5f134GhmgLwRq23YSe5m0gDqiXGV3FhBkzJoe7TNAj6uIsGBsr3Ufn6kKC3svYTibv9pAMQ0RJ+qeX3ObEL8SYSyV127c0Ad7u1qogb8QUOonfR/y3LC/WLbpQ9hHxo33pFkAX+HHoRv0TQwClPczW6Q2g54u+9HwCPcWWG9zMHvxcX77eqrXpIgg8+Dfv0Z+ECidfPpWnvFu9fe/RI0LICaEL8owEm27dHWHEXS/w297cxQq7AKsbvSbZVc8BBi80Ysq+poEZIcdDOZQiu3rRpYNjvcRFA+godlf/OzZMKTAXC0z7QD3SwXNDBPq+RFfvoGbD5C5bZAw=
-  edge: true
-  on:
-    tags: true
