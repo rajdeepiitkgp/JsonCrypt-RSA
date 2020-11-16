@@ -2,14 +2,14 @@
 [![npm version](https://img.shields.io/npm/v/jsoncrypt-rsa.svg?color=limegreen)](https://www.npmjs.com/package/jsoncrypt-rsa) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://travis-ci.com/rajdeepiitkgp/JsonCrypt-RSA.svg?branch=main)](https://travis-ci.com/rajdeepiitkgp/JsonCrypt-RSA) 
 
 
-JsonCrypt-RSA is a opensource library for Encrypting the JSON Payload that is supposed to be trasmitted over HTTP (POST, PUT, DELETE) from **Sender**(Frontend) and Decrypt the Payload at **Receiver**(Backend) and retrive the Information.
+JsonCrypt-RSA is a open source library for Encrypting the JSON Payload that is supposed to be transmitted over HTTP (POST, PUT, DELETE) from **Sender**(Frontend) and Decrypt the Payload at **Receiver**(Backend) and retrieve the Information.
 
 The Encryption and Decryption is based on RSA Algorithm i.e the Payload will be Encrypted using RSA Public Key at Sender and the Payload will be Decrypted using RSA Private Key at the Receiver.
 
 The Encryption and Decryption Logic is implemented by using [Node RSA](https://github.com/rzcoder/node-rsa)
 
 
-## Workfolw
+## Workflow
 To understand how this library works, lets take two Examples
 
 ### Example 1
@@ -25,11 +25,11 @@ A JSON Payload you want to send via HTTP POST Request For SignUp a User
 A JSON Payload you want to send via HTTP POST Request for Transaction
 ```JSON
 {
-    "username": "Rajdeep Biswas",
-    "sessionid": "8796589ad89effaaed345",
-    "accountno": 25698751225221,
-    "isdemataccount": false,
-    "transactionammount": 60000
+    "username": "raja786",
+    "sessionId": "8796589ad89effaaed345",
+    "accountNo": 25698751225221,
+    "isDematAccount": false,
+    "transactionAmount": 60000
 }
 ```
 Even though the network may be HTTPS/SSL so that outside attacker can't see the payload but sometimes you may want even the user shouldn't see the payload from the *Network tab of Browser Dev Tools*, or you don't have the SSL for your Web. So at that time **JsonCrypt-RSA** comes in.
@@ -42,7 +42,7 @@ After Encrypting using **JsonCrypt-RSA** with a RSA Public Key at Sender this tw
 ```
 And this will be transmitted over HTTP, which will be Decrypted at Receiver using **JsonCrypt-RSA** or its equivalent with a RSA Private Key
 
->No Matter the Size or Depth of the JSON Payload, The Encrpted Payload will always have Exactly One Key and Exactly One Value
+>No Matter the Size or Depth of the JSON Payload, The Encrypted Payload will always have Exactly One Key and Exactly One Value
 
 ## Installing
 ```shell
@@ -51,7 +51,7 @@ npm install jsoncrypt-rsa
 > <sub>Requires nodejs >= 8.11.1</sub>
 ## Usage
 ### JavaScript
-How to use JsonCrypt-RSA at Sender to Encrypt the JSON Paylod
+How to use JsonCrypt-RSA at Sender to Encrypt the JSON Payload
 ```javascript
 // ***Encryption of JSON Payload***
 // Create new Instance Object of JsonCrypt
@@ -67,18 +67,18 @@ const crypt = new JsonCrypt();
 const publicKeyString = fs.readFileSync('./keys/public.pem', 'utf-8');
 crypt.SetRsaPublicKey(publicKeyString); 
 const inputObj = {
-  username: "Rajdeep Biswas",
-  sessionid: "8796589ad89effaaed345",
-  accountno: 25698751225221,
-  isdemataccount: false,
-  transactionammount: 60000,
+  username: "raja786",
+  sessionId: "8796589ad89effaaed345",
+  accountNo: 25698751225221,
+  isDematAccount: false,
+  transactionAmount: 60000,
 };
 
 const cryptObject = crypt.EncryptJson(inputObj);
 console.log(cryptObject); 
 ```
 
-How to use JsonCrypt-RSA at Receiver to Decrypt the Encypted JSON Paylod
+How to use JsonCrypt-RSA at Receiver to Decrypt the Encrypted JSON Payload
 
 ```javascript
 // ***Decryption of a Encrypted JSON Payload***
@@ -121,10 +121,10 @@ Sets the RSA Public Key of the `JsonCrypt` instance.
 Sets the RSA Private Key of the `JsonCrypt` instance.
 ### `EncryptJson: (JsonObject: object) => object`
 Encrypt a Object using RSA Public Key
-><span style="color:#f50">Important:</span> Please Set Rsa Public Key using `SetRsaPublicKey(key)` before invoking `EncryptJson(JsonObject)`
+>**Important:** Please Set Rsa Public Key using `SetRsaPublicKey(key)` before invoking `EncryptJson(JsonObject)`
 ### `DecryptJson: <T = object>(JsonObject: object) => T`
 Decrypt an Encrypted object using RSA Private Key. Default Return type is `object`
-><span style="color:#f50">Important:</span> Please Set Rsa Private Key using `SetRsaPrivateKey(key)` before invoking `DecryptJson(JsonObject)`
+>**Important:** Please Set Rsa Private Key using `SetRsaPrivateKey(key)` before invoking `DecryptJson(JsonObject)`
 ## Contributing
 Questions, comments, bug reports, and pull requests are all welcome.
 
