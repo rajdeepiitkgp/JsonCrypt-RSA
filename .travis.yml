@@ -6,10 +6,3 @@ script:
 - npm test
 notifications:
   email: false
-deploy:
-  provider: npm
-  edge: true
-  on:
-    all_branches: true
-    skip_cleanup: true
-    tags: true
