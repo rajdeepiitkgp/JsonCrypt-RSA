@@ -11,7 +11,7 @@
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "version": "npm run format && git add -A",
-    "postversion": "git commit -m 'Bump Version Travis' && git push origin main --tags"
+    "postversion": "git push' && git push --tags"
   },
   "repository": {
     "type": "git",
