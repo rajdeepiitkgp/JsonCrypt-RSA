@@ -40,5 +40,18 @@
   },
   "files": [
     "lib/**/*"
+  ],
+  "keywords": [
+    "node",
+    "rsa",
+    "crypto",
+    "encryption",
+    "decryption",
+    "json",
+    "cryptography",
+    "typescript",
+    "javascript",
+    "security",
+    "rest-api"
   ]
 }
