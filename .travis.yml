@@ -1,10 +1,8 @@
 language: node_js
 node-js:
-- 12
+  - 12
 script:
-- npm run lint
-- npm test
+  - npm run lint
+  - npm test
 notifications:
   email: false
-git:
-  clone: false
