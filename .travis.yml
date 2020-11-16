@@ -6,3 +6,5 @@ script:
 - npm test
 notifications:
   email: false
+git:
+  clone: false
