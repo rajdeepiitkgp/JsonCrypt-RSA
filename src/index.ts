@@ -30,7 +30,7 @@ export class JsonCrypt {
     return EncryptedObject;
   };
 
-  public DecryptJson = <T>(JsonObject: object) => {
+  public DecryptJson = <T = object>(JsonObject: object) => {
     if (!this.RsaPrivateKey) throw new Error("RsaPrivateKey Can't Be Null");
     const DecryptedObject: { value: string } = { value: null };
     // Before Decrypt The ObjStructure will be { ENC ('value') : ENC ('JSONStringifiedString') }
