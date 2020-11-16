@@ -13,7 +13,7 @@
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags && git push origin master"
   },
   "repository": {
     "type": "git",
@@ -53,5 +53,6 @@
     "javascript",
     "security",
     "rest-api"
-  ]
+  ],
+  "access": "public"
 }
