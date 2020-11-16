@@ -60,11 +60,11 @@ How to use JsonCrypt-RSA at Sender to Encrypt the JSON Paylod
 // Get/Create your input Object
 // Apply EncryptJson on inputObj and get cryptObject
 // Transmit this cryptObject over HTTP
-const { JsonCrypt } = require("jsoncrypt-rsa");
-const fs = require("fs");
+const { JsonCrypt } = require('jsoncrypt-rsa');
+const fs = require('fs');
 
 const crypt = new JsonCrypt();
-const publicKeyString = fs.readFileSync("./keys/public.pem", "utf-8");
+const publicKeyString = fs.readFileSync('./keys/public.pem', 'utf-8');
 crypt.SetRsaPublicKey(publicKeyString); 
 const inputObj = {
   username: "Rajdeep Biswas",
@@ -89,14 +89,51 @@ How to use JsonCrypt-RSA at Receiver to Decrypt the Encypted JSON Paylod
 // Apply DecryptJson on cryptObject and get DecryptedObject
 // Use this DecryptedObject for your furthur use
 
-const { JsonCrypt } = require("jsoncrypt-rsa");
-const fs = require("fs");
+const { JsonCrypt } = require('jsoncrypt-rsa');
+const fs = require('fs');
 
 const deCrypt = new JsonCrypt();
-const privateKeyString = fs.readFileSync("./keys/private.pem", "utf-8");
+const privateKeyString = fs.readFileSync('./keys/private.pem', 'utf-8');
 deCrypt.SetRsaPrivateKey(privateKeyString); 
 const cryptObject = /*Your Encrypted JSON Received From Body of HTTP Request*/;
 
 const DecryptedObject = deCrypt.DecryptJson(cryptObject)
 console.log(DecryptedObject); 
 ```
+### TypeScript
+For TypeScript the import statement will be 
+```typescript
+import { JsonCrypt } from 'jsoncrypt-rsa';
+```
+The Encryption Code Logic will be same as JavaScript.
+
+For Decryption Function You can Put an ReturnObject type as Follows
+```typescript
+const DecryptedObject = deCrypt.DecryptJson(cryptObject)
+// or
+const DecryptedObject = deCrypt.DecryptJson<T>(cryptObject)
+// Where T is the object Type Default Value object
+```
+## Properties
+### `SetRsaPublicKey : (key: string) => void`
+Sets the RSA Public Key of the `JsonCrypt` instance. 
+### `SetRsaPrivateKey: (key: string) => void`
+Sets the RSA Private Key of the `JsonCrypt` instance.
+### `EncryptJson: (JsonObject: object) => object`
+Encrypt a Object using RSA Public Key
+><span style="color:#f50">Important:</span> Please Set Rsa Public Key using `SetRsaPublicKey(key)` before invoking `EncryptJson(JsonObject)`
+### `DecryptJson: <T = object>(JsonObject: object) => T`
+Decrypt an Encrypted object using RSA Private Key. Default Return type is `object`
+><span style="color:#f50">Important:</span> Please Set Rsa Private Key using `SetRsaPrivateKey(key)` before invoking `DecryptJson(JsonObject)`
+## Contributing
+Questions, comments, bug reports, and pull requests are all welcome.
+
+## Licensing for code used from node-rsa
+
+Copyright (c) 2014  rzcoder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
