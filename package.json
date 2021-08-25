@@ -1,6 +1,6 @@
 {
   "name": "jsoncrypt-rsa",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Encrypt and Decrypt Json Data Using RSA Algorithm",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
