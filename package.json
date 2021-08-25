@@ -17,6 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/rajdeepiitkgp/JsonCrypt-RSA.git"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "author": "Rajdeep Biswas",
   "license": "MIT",
   "bugs": {
