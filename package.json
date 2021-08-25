@@ -1,6 +1,6 @@
 {
   "name": "jsoncrypt-rsa",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Encrypt and Decrypt Json Data Using RSA Algorithm",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/rajdeepiitkgp/JsonCrypt-RSA.git"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "Rajdeep Biswas",
   "license": "MIT",
