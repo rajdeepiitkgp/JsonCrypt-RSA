@@ -1,8 +1,16 @@
 language: node_js
 node-js:
-  - 12
+  - lts/*
 script:
   - npm run lint
   - npm test
 notifications:
   email: false
+
+deploy:
+  provider: npm
+  email: "rajdeep.biswas2010@gmail.com"
+  api_key: $NPM_API_KEY
+  on:
+    tags: true
+  skip_cleanup: true
