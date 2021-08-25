@@ -8,9 +8,14 @@ notifications:
   email: false
 
 deploy:
-  provider: npm
-  email: "rajdeep.biswas2010@gmail.com"
-  api_key: $NPM_API_KEY
-  on:
-    tags: true
-  skip_cleanup: true
+  - provider: npm
+    email: "rajdeep.biswas2010@gmail.com"
+    api_key: $NPM_API_KEY
+    on:
+      tags: true
+    skip_cleanup: true
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    on:
+      tags: true
